@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Editable Portfolio World</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- OPENING SCREEN -->
+  <section id="openingScreen" class="opening-screen">
+    <div class="opening-content">
+      <p class="small-title" id="openingSmallTitle">Welcome to</p>
+      <h1>Portfolio World</h1>
+      <p class="jp-title" id="openingJapaneseTitle">編集できるポートフォリオワールド</p>
+      <p class="opening-text" id="openingText">
+        Explore profile, skills, projects, achievements, and edit the content directly inside each area.
+      </p>
+      <button id="enterButton" onclick="enterWorld()">Enter World</button>
+    </div>
+  </section>
+
+  <!-- MAIN APP -->
+  <main id="mainApp" class="main-app hidden">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div>
+        <h2>Portfolio World</h2>
+        <p id="headerSubtitle">Interactive Editable Digital Portfolio</p>
+      </div>
+
+      <nav>
+        <button id="navAbout" onclick="openPanel('about')">About</button>
+        <button id="navProjects" onclick="openPanel('projects')">Projects</button>
+        <button id="navSkills" onclick="openPanel('skills')">Skills</button>
+        <button id="navSchool" onclick="openPanel('school')">School</button>
+        <button id="navCareer" onclick="openPanel('career')">Career</button>
+        <button id="navAchievements" onclick="openPanel('achievements')">Achievements</button>
+
+        <button id="languageToggleBtn" class="language-btn" onclick="toggleLanguage()">日本語</button>
+        <button id="editToggleBtn" class="edit-nav-btn" onclick="toggleEditMode()">Edit Mode: OFF</button>
+      </nav>
+    </header>
+
+    <!-- BACKGROUND DECORATION -->
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+
+    <!-- WORLD MAP -->
+    <section class="world-section">
+      <h1 class="world-title">Portfolio World</h1>
+      <p class="world-subtitle" id="worldSubtitle">Click an area on the island to explore.</p>
+
+      <div class="island">
+
+        <div class="area about-area" onclick="openPanel('about')">
+          <div class="area-icon">🏠</div>
+          <p id="mapAbout">About Me House</p>
+        </div>
+
+        <div class="area project-area" onclick="openPanel('projects')">
+          <div class="area-icon">💻</div>
+          <p id="mapProjects">Project Lab</p>
+        </div>
+
+        <div class="area skill-area" onclick="openPanel('skills')">
+          <div class="area-icon">🌳</div>
+          <p id="mapSkills">Skill Forest</p>
+        </div>
+
+        <div class="area school-area" onclick="openPanel('school')">
+          <div class="area-icon">🏫</div>
+          <p id="mapSchool">School Area</p>
+        </div>
+
+        <div class="area career-area" onclick="openPanel('career')">
+          <div class="area-icon">🚀</div>
+          <p id="mapCareer">Career Gate</p>
+        </div>
+
+        <div class="area achievement-area" onclick="openPanel('achievements')">
+          <div class="area-icon">🏆</div>
+          <p id="mapAchievements">Achievement Hall</p>
+        </div>
+
+        <div id="avatar" class="avatar">🧑‍💻</div>
+      </div>
+    </section>
+
+    <!-- SIDE PANEL -->
+    <aside id="sidePanel" class="side-panel">
+      <button class="close-btn" onclick="closePanel()">×</button>
+      <div id="panelContent"></div>
+    </aside>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
