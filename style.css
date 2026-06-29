@@ -828,24 +828,22 @@ button {
     font-size: 14px;
   }
 }
-
-body {
-  min-width: 1100px;
+/* Hide Desktop View button on computer */
+.desktop-view-btn {
+  display: none;
+  background: #a78bfa !important;
+  color: #1e1b4b !important;
+  font-weight: bold;
 }
 
-.main-app {
-  min-width: 1100px;
+/* Show only on phone/tablet */
+@media (max-width: 900px) {
+  .desktop-view-btn {
+    display: inline-block;
+  }
 }
 
-.header {
-  min-width: 1100px;
-}
-
-.world-section {
-  min-width: 1100px;
-}
-
-.island {
-  width: 850px;
-  height: 520px;
+/* Keep visible after desktop mode is turned on */
+body.desktop-view .desktop-view-btn {
+  display: inline-block;
 }
