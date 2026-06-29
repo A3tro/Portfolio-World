@@ -245,7 +245,7 @@ button {
   z-index: -1;
 }
 
-/* AREAS */
+
 
 .area {
   position: absolute;
@@ -317,7 +317,7 @@ button {
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
 }
 
-/* SIDE PANEL */
+
 
 .side-panel {
   position: fixed;
@@ -392,7 +392,6 @@ button {
   font-size: 13px;
 }
 
-/* SKILLS */
 
 .skill-item {
   margin: 18px 0;
@@ -419,7 +418,7 @@ button {
   transition: width 1s ease;
 }
 
-/* ACHIEVEMENTS */
+
 
 .badge-grid {
   display: grid;
@@ -440,7 +439,6 @@ button {
   font-size: 36px;
 }
 
-/* EDIT FORM */
 
 .edit-mode-label {
   display: inline-block;
@@ -829,4 +827,25 @@ button {
   .form-textarea {
     font-size: 14px;
   }
+}
+
+body {
+  min-width: 1100px;
+}
+
+.main-app {
+  min-width: 1100px;
+}
+
+.header {
+  min-width: 1100px;
+}
+
+.world-section {
+  min-width: 1100px;
+}
+
+.island {
+  width: 850px;
+  height: 520px;
 }
