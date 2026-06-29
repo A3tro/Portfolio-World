@@ -1,3 +1,4 @@
+/* style.css */
 * {
   box-sizing: border-box;
 }
@@ -146,6 +147,18 @@ button {
   color: #052e16 !important;
 }
 
+/* DESKTOP VIEW BUTTON */
+
+.desktop-view-btn {
+  display: none;
+  background: #a78bfa !important;
+  color: #1e1b4b !important;
+  font-weight: bold;
+  position: relative;
+  z-index: 99999;
+  pointer-events: auto;
+}
+
 /* CLOUDS */
 
 .cloud {
@@ -245,7 +258,7 @@ button {
   z-index: -1;
 }
 
-
+/* AREAS */
 
 .area {
   position: absolute;
@@ -317,7 +330,7 @@ button {
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
 }
 
-
+/* SIDE PANEL */
 
 .side-panel {
   position: fixed;
@@ -392,6 +405,7 @@ button {
   font-size: 13px;
 }
 
+/* SKILLS */
 
 .skill-item {
   margin: 18px 0;
@@ -418,7 +432,7 @@ button {
   transition: width 1s ease;
 }
 
-
+/* ACHIEVEMENTS */
 
 .badge-grid {
   display: grid;
@@ -439,6 +453,7 @@ button {
   font-size: 36px;
 }
 
+/* EDIT FORM */
 
 .edit-mode-label {
   display: inline-block;
@@ -617,6 +632,10 @@ button {
     flex-direction: column;
     gap: 15px;
     text-align: center;
+  }
+
+  .desktop-view-btn {
+    display: inline-block;
   }
 
   .island {
@@ -828,22 +847,131 @@ button {
     font-size: 14px;
   }
 }
-/* Hide Desktop View button on computer */
-.desktop-view-btn {
-  display: none;
-  background: #a78bfa !important;
-  color: #1e1b4b !important;
-  font-weight: bold;
+
+/* FORCE DESKTOP VIEW */
+
+body.desktop-view {
+  min-width: 1100px !important;
+  overflow-x: auto !important;
 }
 
-/* Show only on phone/tablet */
-@media (max-width: 900px) {
-  .desktop-view-btn {
-    display: inline-block;
-  }
+body.desktop-view .main-app {
+  min-width: 1100px !important;
+  overflow: hidden !important;
 }
 
-/* Keep visible after desktop mode is turned on */
+body.desktop-view .header {
+  min-width: 1100px !important;
+  padding: 20px 40px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  text-align: left !important;
+}
+
+body.desktop-view .header nav {
+  width: auto !important;
+  display: flex !important;
+  grid-template-columns: none !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+  justify-content: flex-end !important;
+}
+
+body.desktop-view .header nav button {
+  width: auto !important;
+  padding: 10px 16px !important;
+  font-size: 14px !important;
+}
+
 body.desktop-view .desktop-view-btn {
-  display: inline-block;
+  display: inline-block !important;
+}
+
+body.desktop-view .world-section {
+  min-width: 1100px !important;
+  padding: 20px !important;
+}
+
+body.desktop-view .world-title {
+  font-size: 46px !important;
+}
+
+body.desktop-view .world-subtitle {
+  font-size: 16px !important;
+  margin-bottom: 30px !important;
+}
+
+body.desktop-view .island {
+  width: 850px !important;
+  height: 520px !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+  position: relative !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  display: block !important;
+  animation: floatIsland 4s ease-in-out infinite !important;
+}
+
+body.desktop-view .island::after {
+  display: block !important;
+}
+
+body.desktop-view .area {
+  position: absolute !important;
+  width: 150px !important;
+  min-height: 120px !important;
+  padding: 12px !important;
+}
+
+body.desktop-view .about-area {
+  left: 90px !important;
+  top: 80px !important;
+}
+
+body.desktop-view .project-area {
+  right: 100px !important;
+  top: 75px !important;
+}
+
+body.desktop-view .skill-area {
+  left: 350px !important;
+  top: 180px !important;
+}
+
+body.desktop-view .school-area {
+  left: 120px !important;
+  bottom: 80px !important;
+}
+
+body.desktop-view .career-area {
+  right: 120px !important;
+  bottom: 80px !important;
+}
+
+body.desktop-view .achievement-area {
+  left: 350px !important;
+  bottom: 30px !important;
+}
+
+body.desktop-view .avatar {
+  display: block !important;
+  left: 390px !important;
+  top: 70px !important;
+}
+
+body.desktop-view .cloud {
+  display: block !important;
+}
+
+body.desktop-view .side-panel {
+  width: 500px !important;
+  max-width: 95vw !important;
+  right: -520px !important;
+}
+
+body.desktop-view .side-panel.open {
+  right: 0 !important;
 }
