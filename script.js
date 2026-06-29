@@ -1,3 +1,4 @@
+// script.js
 const panelContent = document.getElementById("panelContent");
 const sidePanel = document.getElementById("sidePanel");
 const avatar = document.getElementById("avatar");
