@@ -1,11 +1,12 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta id="viewportMeta" name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Editable Portfolio World</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=3" />
 </head>
 <body>
 
@@ -42,8 +43,7 @@
 
         <button id="languageToggleBtn" class="language-btn" onclick="toggleLanguage()">日本語</button>
         <button id="editToggleBtn" class="edit-nav-btn" onclick="toggleEditMode()">Edit Mode: OFF</button>
-        <button id="desktopViewBtn" class="desktop-view-btn" onclick="toggleDesktopView()">Desktop View</button>
-        
+        <button id="desktopViewBtn" class="desktop-view-btn" type="button" onclick="switchDesktopView()">Desktop View</button>
       </nav>
     </header>
 
@@ -101,6 +101,39 @@
 
   </main>
 
-  <script src="script.js"></script>
+  <script>
+    function switchDesktopView() {
+      const meta = document.getElementById("viewportMeta");
+      const btn = document.getElementById("desktopViewBtn");
+
+      if (document.body.classList.contains("desktop-view")) {
+        document.body.classList.remove("desktop-view");
+        meta.setAttribute("content", "width=device-width, initial-scale=1.0");
+        btn.textContent = "Desktop View";
+        localStorage.setItem("desktopViewMode", "off");
+      } else {
+        document.body.classList.add("desktop-view");
+        meta.setAttribute("content", "width=1100");
+        btn.textContent = "Mobile View";
+        localStorage.setItem("desktopViewMode", "on");
+      }
+    }
+
+    window.addEventListener("load", function () {
+      const meta = document.getElementById("viewportMeta");
+      const btn = document.getElementById("desktopViewBtn");
+
+      if (localStorage.getItem("desktopViewMode") === "on") {
+        document.body.classList.add("desktop-view");
+        meta.setAttribute("content", "width=1100");
+
+        if (btn) {
+          btn.textContent = "Mobile View";
+        }
+      }
+    });
+  </script>
+
+  <script src="script.js?v=3"></script>
 </body>
 </html>
